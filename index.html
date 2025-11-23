@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренди Заробітку 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        h1, h2, h3, .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .nav-active {
+            color: #38bdf8;
+            border-bottom: 2px solid #38bdf8;
+        }
+
+        /* Animation for switching pages */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3); 
+            transition: all 0.3s ease;
+        }
+
+        /* Loading spinner */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #38bdf8;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- HEADER (Навігація) -->
+    <header class="fixed w-full top-0 z-50 glass-panel">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 brand-font cursor-pointer" onclick="navigateTo('home')">
+                FUTURE<span class="text-white">CASH</span>'26
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button onclick="navigateTo('home')" class="hover:text-cyan-400 transition">Головна</button>
+                <button onclick="navigateTo('level2-ai')" class="hover:text-cyan-400 transition">AI Тренди</button>
+                <button onclick="navigateTo('level2-meta')" class="hover:text-purple-400 transition">Web3 & Meta</button>
+                <!-- New AI Tool Button -->
+                <button onclick="navigateTo('level2-tools')" class="text-yellow-400 hover:text-yellow-300 transition flex items-center gap-2 border border-yellow-400/30 px-3 py-1 rounded-full bg-yellow-400/10">
+                    <i class="fas fa-sparkles"></i> AI Ідеї
+                </button>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow container mx-auto px-4 pt-24 pb-12">
+
+        <!-- ========================================== -->
+        <!-- РІВЕНЬ 1: ГОЛОВНА СТОРІНКА -->
+        <!-- ========================================== -->
+        <div id="home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="text-center py-20">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                    Заробіток у 2026 році
+                </h1>
+                <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Світ змінився. Старі методи більше не працюють. Дізнайся, як штучний інтелект та метавсесвіт створюють нових мільйонерів.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button onclick="navigateTo('level2-ai')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg shadow-cyan-500/50">
+                        Почати шлях
+                    </button>
+                    <button onclick="navigateTo('level2-tools')" class="bg-slate-800 hover:bg-slate-700 text-yellow-400 border border-yellow-400/50 font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg shadow-yellow-500/20">
+                        <i class="fas fa-magic mr-2"></i> Знайти ідею (AI)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation to Level 2 -->
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <!-- Card 1 -->
+                <div onclick="navigateTo('level2-ai')" class="glass-panel p-8 rounded-2xl cursor-pointer card-hover border-l-4 border-cyan-500">
+                    <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-robot"></i></div>
+                    <h2 class="text-2xl font-bold mb-2">ШІ та Автоматизація</h2>
+                    <p class="text-gray-400">Використання автономних агентів та генеративного контенту для пасивного доходу.</p>
+                    <div class="mt-4 text-cyan-400 text-sm font-bold uppercase tracking-wider">Перейти до розділу <i class="fas fa-arrow-right ml-2"></i></div>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="navigateTo('level2-meta')" class="glass-panel p-8 rounded-2xl cursor-pointer card-hover border-l-4 border-purple-500">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-vr-cardboard"></i></div>
+                    <h2 class="text-2xl font-bold mb-2">Метавсесвіт та Web3</h2>
+                    <p class="text-gray-400">Віртуальна економіка, NFT 2.0 та децентралізовані фінанси майбутнього.</p>
+                    <div class="mt-4 text-purple-400 text-sm font-bold uppercase tracking-wider">Перейти до розділу <i class="fas fa-arrow-right ml-2"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- РІВЕНЬ 2 (Гілка А): ШІ ТА АВТОМАТИЗАЦІЯ -->
+        <!-- ========================================== -->
+        <div id="level2-ai" class="page-section">
+            <button onclick="navigateTo('home')" class="mb-6 text-gray-400 hover:text-white flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> На головну
+            </button>
+            
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 mb-8 border border-cyan-500/30">
+                <h2 class="text-4xl font-bold text-cyan-400 mb-4">Екосистема Штучного Інтелекту 2026</h2>
+                <p class="text-lg text-gray-300">
+                    У 2026 році вже не потрібно писати код чи малювати самостійно. Головна навичка — керування AI-агентами.
+                    Оберіть напрямок для детального вивчення:
+                </p>
+            </div>
+
+            <!-- Links to Level 3 -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div onclick="navigateTo('level3-ai-prompt')" class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 cursor-pointer transition border border-gray-700">
+                    <h3 class="text-xl font-bold text-white mb-2">1. Промт-Архітектура</h3>
+                    <p class="text-sm text-gray-400 mb-4">Створення та продаж складних інструкцій для нейромереж GPT-6 та Midjourney V8.</p>
+                    <span class="text-cyan-400 text-sm">Читати детальніше &rarr;</span>
+                </div>
+                
+                <div onclick="navigateTo('level3-ai-content')" class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 cursor-pointer transition border border-gray-700">
+                    <h3 class="text-xl font-bold text-white mb-2">2. AI-Контент Ферми</h3>
+                    <p class="text-sm text-gray-400 mb-4">Повна автоматизація ведення YouTube каналів та блогів без участі людини.</p>
+                    <span class="text-cyan-400 text-sm">Читати детальніше &rarr;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- РІВЕНЬ 2 (Гілка Б): МЕТАВСЕСВІТ -->
+        <!-- ========================================== -->
+        <div id="level2-meta" class="page-section">
+            <button onclick="navigateTo('home')" class="mb-6 text-gray-400 hover:text-white flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> На головну
+            </button>
+
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 mb-8 border border-purple-500/30">
+                <h2 class="text-4xl font-bold text-purple-400 mb-4">Економіка Метавсесвіту</h2>
+                <p class="text-lg text-gray-300">
+                    Цифровий світ став таким же реальним, як і фізичний. Активи тут коштують реальних грошей.
+                    Оберіть нішу:
+                </p>
+            </div>
+
+            <!-- Links to Level 3 -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div onclick="navigateTo('level3-meta-land')" class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 cursor-pointer transition border border-gray-700">
+                    <h3 class="text-xl font-bold text-white mb-2">1. Віртуальна Нерухомість</h3>
+                    <p class="text-sm text-gray-400 mb-4">Купівля, оренда та декорування просторів для VR-зустрічей та івентів.</p>
+                    <span class="text-purple-400 text-sm">Читати детальніше &rarr;</span>
+                </div>
+                
+                <div onclick="navigateTo('level3-meta-game')" class="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 cursor-pointer transition border border-gray-700">
+                    <h3 class="text-xl font-bold text-white mb-2">2. GameFi 2.0</h3>
+                    <p class="text-sm text-gray-400 mb-4">Заробіток ігрових токенів та рідкісних скінів у AR-іграх нового покоління.</p>
+                    <span class="text-purple-400 text-sm">Читати детальніше &rarr;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- NEW LEVEL 2: AI TOOLS (GEMINI) -->
+        <!-- ========================================== -->
+        <div id="level2-tools" class="page-section">
+            <button onclick="navigateTo('home')" class="mb-6 text-gray-400 hover:text-white flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> На головну
+            </button>
+
+            <div class="glass-panel p-8 rounded-2xl border-l-4 border-yellow-500 mb-8">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-4"><i class="fas fa-brain"></i> Генератор Бізнес-Ідей 2026 ✨</h2>
+                <p class="text-gray-300 mb-6">
+                    Не знаєте з чого почати? Введіть своє хобі або інтерес, і наш <strong>AI-консультант (Gemini)</strong> 
+                    згенерує для вас 3 футуристичні бізнес-моделі, актуальні для 2026 року.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" id="userInterest" placeholder="Введіть інтерес (напр.: футбол, кулінарія, малювання...)" 
+                           class="flex-grow bg-slate-800 text-white px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-slate-700">
+                    <button onclick="generateBusinessIdea()" id="generateBtn"
+                            class="bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition transform hover:scale-105 min-w-[200px] flex justify-center items-center">
+                        <span id="btnText">Згенерувати ✨</span>
+                        <span id="btnLoader" class="loader hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="aiResult" class="hidden">
+                <div class="bg-slate-800 rounded-2xl p-8 border border-yellow-500/20">
+                    <h3 class="text-xl font-bold text-white mb-4">Ваші Персональні Ідеї:</h3>
+                    <div id="aiOutput" class="prose prose-invert text-gray-300 space-y-4">
+                        <!-- Gemini content will appear here -->
+                    </div>
+                    <div class="mt-6 text-xs text-gray-500 text-right">
+                        Powered by Google Gemini ✨
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- РІВЕНЬ 3: ДЕТАЛЬНІ СТОРІНКИ (ШІ) -->
+        <!-- ========================================== -->
+        
+        <!-- Page 3.1: Prompt Engineering -->
+        <div id="level3-ai-prompt" class="page-section">
+            <div class="flex justify-between items-center mb-6">
+                <button onclick="navigateTo('level2-ai')" class="text-gray-400 hover:text-white flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Назад до AI
+                </button>
+                <span class="bg-cyan-900 text-cyan-300 px-3 py-1 rounded-full text-xs">Рівень 3: Експерт</span>
+            </div>
+            
+            <article class="prose prose-invert lg:prose-xl max-w-none">
+                <h1 class="text-cyan-400">Промт-Архітектура: Професія майбутнього</h1>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Prompts" class="w-full h-64 object-cover rounded-xl mb-6 opacity-80">
+                
+                <h3>Суть методу</h3>
+                <p>У 2026 році "сирі" запити до ШІ дають посередній результат. Бізнес готовий платити тисячі доларів за <strong>системні промти</strong>, які налаштовують AI на роль ідеального юриста, маркетолога чи психолога.</p>
+                
+                <div class="bg-slate-800 p-6 rounded-lg my-6 border-l-4 border-cyan-500">
+                    <strong>План дій:</strong>
+                    <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-300">
+                        <li>Вивчіть синтаксис GPT-6 та Claude 4.</li>
+                        <li>Створіть портфоліо шаблонів на PromptBase.</li>
+                        <li>Пропонуйте послуги налаштування корпоративних AI-систем.</li>
+                    </ul>
+                </div>
+                
+                <p>Очікуваний дохід: <strong>$3000 - $8000 / міс</strong>.</p>
+            </article>
+        </div>
+
+        <!-- Page 3.2: AI Content -->
+        <div id="level3-ai-content" class="page-section">
+            <div class="flex justify-between items-center mb-6">
+                <button onclick="navigateTo('level2-ai')" class="text-gray-400 hover:text-white flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Назад до AI
+                </button>
+                <span class="bg-cyan-900 text-cyan-300 px-3 py-1 rounded-full text-xs">Рівень 3: Експерт</span>
+            </div>
+
+            <article class="prose prose-invert lg:prose-xl max-w-none">
+                <h1 class="text-cyan-400">Автоматизовані Контент-Ферми</h1>
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" alt="Content Creation" class="w-full h-64 object-cover rounded-xl mb-6 opacity-80">
+                
+                <h3>Як це працює?</h3>
+                <p>Ви використовуєте зв'язку: ChatGPT (сценарій) + ElevenLabs (озвучка) + Sora (відео). Процес повністю автоматизований через Python скрипти.</p>
+                
+                <div class="grid md:grid-cols-3 gap-4 my-8 text-center">
+                    <div class="bg-slate-800 p-4 rounded">1. Аналіз трендів</div>
+                    <div class="bg-slate-800 p-4 rounded">2. Авто-генерація</div>
+                    <div class="bg-slate-800 p-4 rounded">3. Публікація</div>
+                </div>
+                
+                <p>Очікуваний дохід: <strong>$500 - $10000 / міс</strong> (залежить від переглядів).</p>
+            </article>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- РІВЕНЬ 3: ДЕТАЛЬНІ СТОРІНКИ (META) -->
+        <!-- ========================================== -->
+
+        <!-- Page 3.3: Virtual Land -->
+        <div id="level3-meta-land" class="page-section">
+            <div class="flex justify-between items-center mb-6">
+                <button onclick="navigateTo('level2-meta')" class="text-gray-400 hover:text-white flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Назад до Meta
+                </button>
+                <span class="bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-xs">Рівень 3: Експерт</span>
+            </div>
+
+            <article class="prose prose-invert lg:prose-xl max-w-none">
+                <h1 class="text-purple-400">Рентери віртуальних світів</h1>
+                <img src="https://images.unsplash.com/photo-1614727187346-7992730fdd52?w=800&q=80" alt="Virtual Land" class="w-full h-64 object-cover rounded-xl mb-6 opacity-80">
+                
+                <h3>Ринок 2026 року</h3>
+                <p>Бренди (Nike, Gucci) орендують простори у Decentraland та Sandbox для презентацій. Ваше завдання - купувати перспективні "ділянки" та здавати їх в оренду.</p>
+                <p>Також популярний напрямок — <strong>3D-архітектура</strong>. Створення вілл та офісів для віртуального простору.</p>
+            </article>
+        </div>
+
+        <!-- Page 3.4: GameFi -->
+        <div id="level3-meta-game" class="page-section">
+             <div class="flex justify-between items-center mb-6">
+                <button onclick="navigateTo('level2-meta')" class="text-gray-400 hover:text-white flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Назад до Meta
+                </button>
+                <span class="bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-xs">Рівень 3: Експерт</span>
+            </div>
+
+            <article class="prose prose-invert lg:prose-xl max-w-none">
+                <h1 class="text-purple-400">Кіберспорт та P2E Економіка</h1>
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Gaming" class="w-full h-64 object-cover rounded-xl mb-6 opacity-80">
+                
+                <h3>Грай та заробляй</h3>
+                <p>У 2026 році ігри платять не тільки "китам". Модель "Skill-to-Earn" дозволяє заробляти на:</p>
+                <ul class="list-disc pl-5 mt-4 space-y-2 text-gray-300">
+                    <li>Фармінгу рідкісних ресурсів.</li>
+                    <li>Прокачці акаунтів ("драйверство").</li>
+                    <li>Участі в DAO гільдіях.</li>
+                </ul>
+            </article>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-center py-8">
+        <p class="text-gray-500">© 2026 FutureCash Project. Індивідуальне завдання.</p>
+        <p class="text-xs text-gray-600 mt-2">Не є фінансовою порадою. Всі інвестиції несуть ризики.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- Navigation Logic ---
+        function navigateTo(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+            
+            // Close mobile menu if open (simple logic)
+        }
+
+        function toggleMobileMenu() {
+            alert("Мобільне меню - це демо-функція.");
+        }
+
+        // --- GEMINI API INTEGRATION ---
+        
+        const apiKey = ""; // API key injection
+
+        async function generateBusinessIdea() {
+            const interest = document.getElementById('userInterest').value;
+            const btnText = document.getElementById('btnText');
+            const btnLoader = document.getElementById('btnLoader');
+            const resultDiv = document.getElementById('aiResult');
+            const outputDiv = document.getElementById('aiOutput');
+
+            if (!interest.trim()) {
+                alert("Будь ласка, введіть інтерес або хобі!");
+                return;
+            }
+
+            // UI Loading State
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+            resultDiv.classList.add('hidden');
+
+            const systemPrompt = "Respond in Ukrainian. You are a futuristic business consultant from 2026. Suggest 3 innovative ways to earn money in the user's field using AI, VR, or Web3 technologies. Keep it brief, exciting, and futuristic. Format using HTML tags like <ul>, <li>, and <strong>.";
+            const userPrompt = `Мій інтерес: ${interest}. Як на цьому заробити у 2026?`;
+
+            try {
+                const response = await callGeminiWithRetry(systemPrompt, userPrompt);
+                outputDiv.innerHTML = response;
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                outputDiv.innerHTML = "<p class='text-red-400'>Вибачте, AI зараз перевантажений. Спробуйте пізніше.</p>";
+                resultDiv.classList.remove('hidden');
+            } finally {
+                // UI Reset State
+                btnText.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
+            }
+        }
+
+        async function callGeminiWithRetry(systemPrompt, userPrompt, retries = 5, delay = 1000) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(res => setTimeout(res, delay * Math.pow(2, i)));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
